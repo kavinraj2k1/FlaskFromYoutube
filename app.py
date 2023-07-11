@@ -1,7 +1,13 @@
 from flask import Flask, render_template, jsonify
-from database import load_from_Db
+from database import load_from_Db, load_particular_job
 
 app = Flask(__name__)
+
+
+@app.route('/jobs/<id>')
+def list_of_jobs(id):
+  jobs = load_particular_job(id)
+  return render_template('jobdescription.html', job=jobs)
 
 
 @app.route("/")

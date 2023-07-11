@@ -15,3 +15,15 @@ def load_from_Db():
     for row in result.fetchall():
       jobs.append(dict(zip(result.keys(), row)))
   return jobs
+
+
+def load_particular_job(id):
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from jobs where id = :id"),
+                          {"id": id})
+
+    row = result.fetchall()
+    if not row:
+      return None
+    else:
+      return dict(zip(result.keys(), row[0]))
