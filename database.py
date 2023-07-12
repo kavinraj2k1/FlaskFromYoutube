@@ -27,3 +27,14 @@ def load_particular_job(id):
       return None
     else:
       return dict(zip(result.keys(), row[0]))
+
+def load_application(data):
+  with engine.connect() as conn:
+    conn.execute(
+      text(
+        "insert into user(name,email,linkedin) values (:name,:email,:linkedin)"
+      ), {
+        'name': data['name'],
+        'email': data['email'],
+        'linkedin': data['linkedin']
+      })

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jovian Careers</title>
+    <title>JobIfy</title>
     <meta charset="utf-8">
     {%include 'bootstrap.html' %}
   </head>
@@ -11,14 +11,18 @@
       <div class="row" style="margin-bottom:32px">
         <div class="col-md-6">
       <p class="lead">
-        At Jovian, we’re on a mission to build the most highly reputed technical university in the world, and we’re building it completely online. Our flagship data science program helps working professionals with a background in programming or analytics make a career transition to data science. We also offer several free beginner-friendly courses and have a fast-growing community of 200,000+ users.
+       A job seeker is an unemployed individual who is actively searching for a job opportunity. In recruitment language, the term. The job seeker is often utilized in the hiring process. There are multiple types of job seekers by nature
+
+Non-active job seekers those job seekers who are not thinking anything about employment  and not looking for any job
+Monitors: these are the job seekers who are directly not looking for any job opportunity but monitoring the recruiters’ activities on regular basis to keep information about current opportunities in the market
+Active or seekers their job seekers are the most popular ones as they seek a job and actively search for one.
       </p>
         </div>
         <div class="d-none d-md-block col-md-6">
         <img src="/static/people.jpeg" style="height:320px;border-radius:4px;">
         </div>
       </div>
-      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <h2 class="text-center mt-2 mb-4">Available Positions</h2>
       <div>
         {% for job in jobs %}
           {% include 'jobitem.html' %}
